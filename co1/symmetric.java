@@ -1,38 +1,47 @@
 import java.util.*;
 
-public class sym_pg4 {
-	public static void main(String[] args){
-		int m[][] = new int[10][10];
-		int i,j,n,flag=0;
-	    Scanner in = new Scanner(System.in);
-	    System.out.println("Enter the size of matrix");
-	    n=in.nextInt();
-	    System.out.println("Enter the matrix");
-	    for(i=0;i<n;i++){
-	    	for(j=0;j<n;j++){
-	    		m[i][j]=in.nextInt();
-	    	}
-	    }
-	    System.out.println("Matrix");
-	    for(i=0;i<n;i++){
-	    	for(j=0;j<n;j++){
-	    		System.out.print(m[i][j]+" ");
+public class symmetric {
+	public static void main(String[] args)
+	{
+		int m,i,j,flag=0;
+		int[][] m2 = new int[10][10];
+		while(true) {
+		Scanner in= new Scanner(System.in);
+		System.out.println("Enter size of matrix");
+		m= in.nextInt();
+		System.out.println("Enter matrix");
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				m2[i][j]=in.nextInt();
+			}
+		}
+		for(i=0;i<m;i++){
+	    	for(j=0;j<m;j++){
+	    		System.out.print(m2[i][j]+" ");
 	    	}
 	    	System.out.println();
 	    }
-	    System.out.println("");
-	    for(i=0;i<n;i++){
-	    	for(j=0;j<n;j++){
-	    		if(m[i][j] != m[j][i]){
-	    			flag=1;
-	    		}
-	    	}
-	    }
-	    if(flag == 1){
-	    	System.out.println("Matrix is not symmetric");
-	    }
-	    else{
-	    	System.out.println("Matrix is symmetric");
-	    }
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				if(m2[i][j]!=m2[j][i])
+				{
+					flag=1;
+				}
+			}
+		}
+		if(flag==1)
+		{
+			System.out.println("Matrix not symmetric");
+			break;
+		}
+		else
+		{
+			System.out.println("Matrix symmetric");
+		}
+		}
 	}
-}
+	}
